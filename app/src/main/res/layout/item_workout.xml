@@ -22,5 +22,12 @@
         android:text="Workout Description"
         android:textSize="14sp"
         android:textColor="@android:color/darker_gray" />
+    <ImageView
+        android:id="@+id/workoutImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"/>
+
 
 </LinearLayout>

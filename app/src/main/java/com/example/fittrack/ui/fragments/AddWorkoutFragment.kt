@@ -50,13 +50,13 @@ class AddWorkoutFragment : Fragment() {
         }
 
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
-
         val workout = Workout(
             id = null,
             title = title,
             description = "Calories Burned: $calories",
             duration = duration,
-            date = System.currentTimeMillis().toString()
+            date = System.currentTimeMillis().toString(),
+            imageUrl = imageUrl
         )
 
         val databaseRef = FirebaseDatabase.getInstance().getReference("users")
@@ -72,6 +72,7 @@ class AddWorkoutFragment : Fragment() {
                 Toast.makeText(requireContext(), "Error: ${error.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
 
     private fun clearFields() {
         etWorkoutName.text.clear()

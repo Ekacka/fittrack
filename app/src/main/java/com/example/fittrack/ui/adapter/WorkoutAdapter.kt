@@ -1,9 +1,10 @@
 package com.example.fittrack.ui.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.fittrack.R
 import com.example.fittrack.data.Workout
 import com.example.fittrack.databinding.ItemWorkoutBinding
 
@@ -31,7 +32,15 @@ class WorkoutAdapter(private var workouts: List<Workout>) : RecyclerView.Adapter
         fun bind(workout: Workout) {
             binding.workoutTitle.text = workout.title
             binding.workoutDescription.text = workout.description
-            // Add more fields as needed
+
+            // Загружаем изображение, если есть URL
+            if (!workout.imageUrl.isNullOrEmpty()) {
+                Glide.with(binding.root.context)
+                    .load(workout.imageUrl)
+                    .into(binding.workoutImage)
+            } else {
+                binding.workoutImage.setImageResource(R.drawable.placeholder)
+            }
         }
     }
 }

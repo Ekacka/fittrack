@@ -5,5 +5,6 @@ data class Workout(
     val title: String = "",        // Use 'title' instead of 'name'
     val description: String = "",
     val duration: Int = 0,
-    val date: String = ""
+    val date: String = "",
+    val imageUrl: String? = null
 )
