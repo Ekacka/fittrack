@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "14655920586",
+    "project_id": "fittrack-53376",
+    "storage_bucket": "fittrack-53376.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14655920586:android:66f4ec283c2d9955335733",
+        "android_client_info": {
+          "package_name": "com.example.fittrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO-y-f5PL__UbF31hLO4FV89iHuSnJT6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
