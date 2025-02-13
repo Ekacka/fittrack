@@ -33,7 +33,6 @@ class WorkoutAdapter(private var workouts: List<Workout>) : RecyclerView.Adapter
             binding.workoutTitle.text = workout.title
             binding.workoutDescription.text = workout.description
 
-            // Загружаем изображение, если есть URL
             if (!workout.imageUrl.isNullOrEmpty()) {
                 Glide.with(binding.root.context)
                     .load(workout.imageUrl)
