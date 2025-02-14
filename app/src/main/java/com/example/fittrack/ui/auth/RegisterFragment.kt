@@ -23,6 +23,7 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_register, container, false)
+        val btnGoToLogin: Button = view.findViewById(R.id.btnGoToLogin)
 
         etEmail = view.findViewById(R.id.etEmail)
         etPassword = view.findViewById(R.id.etPassword)
@@ -32,7 +33,9 @@ class RegisterFragment : Fragment() {
         btnRegister.setOnClickListener {
             registerUser()
         }
-
+        btnGoToLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
         return view
     }
 

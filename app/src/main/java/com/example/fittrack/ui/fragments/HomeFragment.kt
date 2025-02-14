@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fittrack.databinding.FragmentHomeBinding
 import com.example.fittrack.ui.adapter.WorkoutAdapter
 import com.example.fittrack.ui.viewmodel.WorkoutViewModel
-import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -55,22 +54,16 @@ class HomeFragment : Fragment() {
                 val position = viewHolder.adapterPosition
                 val workout = workoutAdapter.getWorkoutAt(position)
 
-                println("Workout to delete: ${workout.id}")  // 👈 Should now print a valid ID
+                println("Workout to delete: ${workout.id}")
 
                 if (workout.id != null) {
                     viewModel.deleteWorkout(workout.id!!)
-                    workoutAdapter.notifyItemRemoved(position) // Remove from UI
+                    workoutAdapter.notifyItemRemoved(position)
                 } else {
                     println("Workout ID is null! Cannot delete.")
-                    workoutAdapter.notifyItemChanged(position) // Prevent UI glitch
+                    workoutAdapter.notifyItemChanged(position)
                 }
             }
-
-
-
-
-
-
         })
         itemTouchHelper.attachToRecyclerView(binding.recyclerView)
     }
